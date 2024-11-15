@@ -1,0 +1,5 @@
+SELECT ANIMAL_ID, 
+       NAME, 
+       IF(SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%', 'O', 'X') AS IS_NEUTERED
+FROM animal_ins
+ORDER BY ANIMAL_ID;
