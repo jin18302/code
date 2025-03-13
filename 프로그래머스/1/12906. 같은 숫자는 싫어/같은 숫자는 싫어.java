@@ -1,20 +1,19 @@
+
 import java.util.*;
 
 public class Solution {
-    public int[] solution(int[] arr) {
-
-        Stack<Integer> stack = new Stack();
-
-        stack.add(arr[0]);
-
-        for ( int i = 1; i < arr.length; i++){
-
-            if (arr[i] != stack.peek()) {
-                stack.push(arr[i]);
-            }
+    public int[] solution(int []arr) {
+        ArrayList<Integer> tempList = new ArrayList<Integer>();
+        int preNum = 10;
+        for(int num : arr) {
+            if(preNum != num)
+                tempList.add(num);
+            preNum = num;
+        }       
+        int[] answer = new int[tempList.size()];
+        for(int i=0; i<answer.length; i++) {
+            answer[i] = tempList.get(i).intValue();
         }
-        LinkedList<Integer> linkedList = new LinkedList(stack);
-        
-        return linkedList.stream().mapToInt(n -> n).toArray();
+        return answer;
     }
 }
