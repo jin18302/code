@@ -1,17 +1,18 @@
 class Solution {
     public int solution(int num) {
-    long n=num;
-      if (n==1)return 0;
-        int count=1;
         
+        if(num == 1)return 0;
         
-           while(count<=500){
-                if(n%2==0) n/=2;
-                else n=n*3+1;
-
-                if (n==1)return count;
-               else count++;
-            }
-            return -1;
+        long value = num;
+        int count = 1;
+        
+        while(count != 500){
+            
+           value = value %2 == 0 ? value/2 : (value * 3)+1; 
+            
+            if(value == 1){return count;}
+            count ++;
+        }
+        return -1;
     }
 }
