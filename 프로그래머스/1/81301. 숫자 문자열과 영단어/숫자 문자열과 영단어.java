@@ -1,17 +1,12 @@
 import java.lang.*;
 
+
 class Solution {
     public int solution(String s) {
-       String[] strArr = 
-           new String[]{"zero", "one", "two", "three", "four", "five", 
-                        "six", "seven","eight", "nine", "ten"};
-        
-        for(int i = 0 ; i < strArr.length ; i ++){
-            if(s.contains(strArr[i])){
-                s = s.replace(strArr[i], i + "");
-            }
-            
+        String[] strArr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        for(int i = 0; i < strArr.length; i++) {
+            s = s.replaceAll(strArr[i], Integer.toString(i));
         }
-            return Integer.parseInt(s);
+        return Integer.parseInt(s);
     }
 }
